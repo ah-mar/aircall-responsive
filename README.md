@@ -27,4 +27,5 @@ All the Icons are from HeroIcons since they integrate really well with tailwind.
 ## Scope for improvement
 
 Showing call details on small screen is still a little hacky- the information is repeated, the grid is not being used as intended which result in ui on third line go a little out of alignment.
-I am not very fond of showing navbars/buttons on  mobile view- the information density is way too much. The more popular/better design is to - pack all the buttons and nav on hidden menu which can then be revealed as required by hamburger menu. Possiblty for the next iteration perhaps.
+Showing navbars/buttons on  mobile view- the information density is way too much. The more popular/better design is to - pack all the buttons and nav on hidden menu which can then be revealed as required by hamburger menu. Possibility for the next iteration perhaps.
+Use of random data from faker js library can sometimes cause hydration issues between server rendered and client rendered ui which affect app performance or cause errors. A non-random/ consistent dataset would be a better choice.
