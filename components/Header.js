@@ -13,7 +13,7 @@ function Header({ setFilter }) {
         onClick={handleCallsReset}
         className="text-2xl font-bold text-green-500 lg:text-center lg:border-b lg:py-6"
       >
-        Logo
+        AirCall
       </h1>
       <button
         onClick={() => setFilter("inbox")}

@@ -72,7 +72,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="flex flex-col h-screen container mx-auto border max-w-screen-2xl   rounded lg:grid lg:grid-cols-4 xl:grid-cols-5 ">
+      <div className="flex flex-col  h-screen container mx-auto border max-w-screen-2xl   rounded lg:grid lg:grid-cols-4 xl:grid-cols-5 relative">
+     
         <Header setFilter={setFilter} />
 
         <MainBody refresh={refresh} setRefresh={setRefresh} calls={calls} />
@@ -81,6 +82,8 @@ export default function Home() {
 
         <Sidebar />
 
+        
+        
         <Footer missedCalls={missedCalls} />
       </div>
     </div>

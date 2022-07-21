@@ -1,6 +1,6 @@
 import { PhoneIcon } from "@heroicons/react/solid";
 import { useState } from "react";
-import { format, formatDuration, secondsToMinutes } from "date-fns";
+import { format } from "date-fns";
 
 function ActivityCard({ activity, refresh, setRefresh }) {
   const [isCardOpen, setIsCardOpen] = useState(false);
@@ -37,7 +37,10 @@ function ActivityCard({ activity, refresh, setRefresh }) {
   };
 
   return (
-    <div className="grid grid-cols-5 sm:grid-cols-7 content-center place-content-center gap-x-2 gap-y-2  py-2 px-4 border mx-4 rounded-md text-gray-700">
+    <div
+      onClick={toggleDetails}
+      className="grid grid-cols-5 sm:grid-cols-7 content-center place-content-center gap-x-2 gap-y-2  py-2 px-4 border mx-4 rounded-md text-gray-700 hover:border-green-500 cursor-pointer sm:cursor-default sm:hover:border-gray-300"
+    >
       <div className="">
         <PhoneIcon
           className={`h-5 w-5 inline ${iconColor[activity.call_type]}`}
@@ -70,6 +73,28 @@ function ActivityCard({ activity, refresh, setRefresh }) {
       <p className="hidden sm:inline-flex sm:col-span-2 text-sm font-bold items-center justify-end">
         Via: {activity?.via || "Unknown"}
       </p>
+      {isCardOpen && (
+        <div className="col-span-5 flex justify-between  sm:hidden mt-4 ">
+          <button
+            onClick={archiveCall}
+            className="justify-self-start text-xs font-bold p-1 border rounded hover:bg-gray-100 active:scale-90"
+          >
+            {activity.is_archived ? "Unarchive" : "Archive"}
+          </button>
+
+          <div className=" col-span-3  flex gap-10 ">
+           <p>Via:{" "}</p> 
+            <p className=" whitespace-nowrap font-bold col-span-2 ">
+              {activity?.via || "Unknown"}
+            </p>{" "}
+          </div>
+
+          <div className="flex items-center gap-1 justify-start ml-16">
+            <p className="text-xs text-gray-400  ml-1">{activity?.duration}s</p>
+            <p className="  text-xs text-gray-400  ">{activity?.direction}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -86,3 +111,5 @@ const data = {
   is_archived: false,
   call_type: "missed",
 };
+
+
