@@ -1,5 +1,6 @@
 import { faker } from "@faker-js/faker";
 import Image from "next/image";
+import { PhoneIcon, UserCircleIcon } from "@heroicons/react/solid";
 
 function Sidebar() {
   const name = faker.name.findName();
@@ -16,14 +17,18 @@ function Sidebar() {
             key={index}
             className="flex items-center justify-between gap-4 border-b rounded px-2 py-4"
           >
-            <img
+            <UserCircleIcon className="h10 w-10 text-gray-200 border-2 border-green-500 rounded-full" />
+
+            {/* // Random image generation was causing issues between screen refresh - so commenting out image and replacing with icon */}
+            
+            {/* <img
               src={
                 faker.image.avatar(50, 50, false) ||
                 "https://avatars.dicebear.com/api/adventurer/Scrooge%20Mc.svg"
               }
               alt=""
               className=" h-10 w-10 rounded-full border "
-            />
+            /> */}
             <div className=" whitespace-nowrap overflow-hidden  text-ellipsis">
               <p className="">{faker.name.findName() || "Unknown"}</p>
             </div>
