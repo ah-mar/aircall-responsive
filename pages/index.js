@@ -14,7 +14,7 @@ export default function Home() {
 
   let taskref = useRef();
 
-  console.log({ calls, refresh, filter });
+  //console.log({ calls, refresh, filter });
 
   // calculate number of missed call for use in footer phone icon
   const missedCalls = calls.filter(
