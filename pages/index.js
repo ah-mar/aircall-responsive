@@ -68,7 +68,7 @@ export default function Home() {
     <div className="text-gray-700">
       <Head>
         <title>Call-Responsive</title>
-        <meta name="description" content="A responsive aircall app />
+        <meta name="description" content="A responsive aircall app" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
