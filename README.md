@@ -1,5 +1,7 @@
 A Next JS app simulating call details screen for a typical phone app.
 
+[![Node.js CI](https://github.com/ah-mar/aircall-responsive/actions/workflows/node.js.yml/badge.svg)](https://github.com/ah-mar/aircall-responsive/actions/workflows/node.js.yml)
+
 ## App Description
 
 The bottom row footer buttons are non-functional. The header has filters for Inbox(non-archived) calls, All call and Archived calls. Clicking the filters fetch information from rest backend, filter the information and display the refreshed data.
